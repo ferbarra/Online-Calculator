@@ -1,0 +1,37 @@
+body {
+  background-color: #ccffff;
+}
+#calculator {
+  width:350px;
+  height:410px;
+  background-color: lightgrey;
+  border:2px solid black;
+  border-radius: 15px;
+  margin-top:25px;
+  padding-left:25px;
+  padding-right:25px;
+}
+#calculator-name {
+  font-size:175%;
+  margin-bottom: 20px;
+}
+#screen {
+  margin-bottom:30px;
+}
+.col-md-3 {
+  margin-bottom: 20px;
+}
+.btn {
+  background-color: black;
+  color: white;
+}
+.btn:hover,
+.btn:active {
+  color:white;
+}
+.btn.btn-important {
+  background-color: red;
+}
+#equal-sign {
+  width: 100%;
+}
