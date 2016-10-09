@@ -5,7 +5,14 @@ $(document).ready(function() {
     $(".number").click(function() {
         var value = $(this).text();
         console.log(value);
-        calcTokens.push(value);
+        //If the previous elem in the array is a numberconcatenate the value to the previous elem.
+        //This works despite that the elements are string JS tries to turn it to interger.
+        //(Don't know how safe this is - I'll get back to it later')
+        if (isNaN(calcTokens[calcTokens.length - 1])) {
+            calcTokens.push(value);
+        } else {
+            calcTokens[calcTokens.length - 1] += value;
+        }
         updateScreen();
     });
 
@@ -30,6 +37,16 @@ $(document).ready(function() {
         }
         updateScreen();
     });
+
+    $("#CE").click(function() {
+        calcTokens.pop();
+        updateScreen();
+    })
+
+    $("#AC").click(function() {
+        calcTokens.splice(0, calcTokens.length);
+        updateScreen()
+    })
 
     function updateScreen() {
         console.log(calcTokens);
