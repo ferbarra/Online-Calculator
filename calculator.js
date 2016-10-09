@@ -1,3 +1,22 @@
+$(document).ready(function() {
+    var calcTokens = [];
+    $(".number").click(function() {
+        var value = $(this).text();
+        console.log(value);
+        calcTokens.push(value);
+        updateScreen();
+    });
+
+    function updateScreen() {
+        console.log(calcTokens);
+        screenValues = calcTokens.join('');
+        $("#screen").val(screenValues);
+    }
+});
+
+
+
+/*
 document.addEventListener('DOMContentLoaded', function() {
     let screen = '';
     let buttons = document.querySelectorAll("button");
@@ -9,4 +28,4 @@ document.addEventListener('DOMContentLoaded', function() {
         let value = button.value;
         console.log(value);
     }
-});
+}); */
