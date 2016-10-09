@@ -1,9 +1,33 @@
 $(document).ready(function() {
+    
     var calcTokens = [];
+    
     $(".number").click(function() {
         var value = $(this).text();
         console.log(value);
         calcTokens.push(value);
+        updateScreen();
+    });
+
+    $(".operator").click(function() {
+        var operator = $(this).text();
+        if (isNaN(calcTokens[calcTokens.length - 1])) {
+            calcTokens.pop();
+        }
+        switch(operator) {
+            case "+":
+                calcTokens.push("+");
+                break;
+            case "-":
+                calcTokens.push("-");
+                break;
+            case "x":
+                calcTokens.push("*");
+                break;
+            case "÷":
+                calcTokens.push("/");
+                break;
+        }
         updateScreen();
     });
 
